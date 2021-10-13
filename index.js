@@ -39,8 +39,48 @@ runApp = () =>  {
     .then(response => {
         const managerInstance = new Manager(response.managerName, response.managerId, response.managerEmail, response.officeNum)
         teamArray.push(managerInstance)
-        // file create team function
+        createTeam()
 
     })
     }
+    createTeam = () => {
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "createTeam",
+                message: "Would role would you like to add?",
+                choices: ["Engineer", "Intern", "Manager", "No members"]
+            }
+        ]).then(response => {
+            switch(response.createTeam) {
+                case "Engineer": 
+                // callEngineer function here
+                break;
+
+                case "Intern": 
+                // callIntern function here
+                break;
+
+                case "Manager": 
+                managerPrompt()
+                break;
+
+                default: 
+                createTeamCards()
+            }
+        })
+    }
+
+
+
+    managerPrompt()
+
+    createTeamCards = () => {
+        fs.writeFileSync(distFile, renderTeam(teamArray), "utf-8", err => {
+            console.log(err)
+        }) 
+    }
 }
+
+
+runApp()
