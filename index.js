@@ -140,8 +140,6 @@ runApp = () =>  {
     }
 
 
-    // internPrompt()
-    // managerPrompt()
     createTeam()
 
     // Create team cards starts here

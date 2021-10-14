@@ -17,7 +17,26 @@ const cardGenerator= team => {
      </div>
          `;
      };
+
+
      // html for engineer card
+     const generateEngineerCard = engineer => {
+        return `
+        <div class="card employee-card">
+        <div class="card-header">
+            <h2 class="card-title">${engineer.getName()}</h2>
+            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${engineer.getId()}</li>
+                <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                <li class="list-group-item">Github: github.com/${engineer.getGithub()}</li>
+            </ul>
+        </div>
+    </div>
+        `;
+    };
      //html for intern card
      const html = [];
      html.push(team
@@ -27,6 +46,14 @@ const cardGenerator= team => {
      /// add like above for engineer and intern
      return html.join("");
  }
+
+
+
+
+
+
+
+
  // export function to generate entire page
  module.exports = team => {
      return `
