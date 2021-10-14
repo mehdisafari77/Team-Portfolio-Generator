@@ -1,5 +1,5 @@
-const cardGenerator= team => {
-    //template literal with card to make manager using Manager model metho
+const cardGenerator = team => {
+    //template literal with card to make manager using Manager model method
      const generateManagerCard = manager => {
          return `
          <div class="card employee-card">
@@ -38,19 +38,42 @@ const cardGenerator= team => {
         `;
     };
      //html for intern card
+     const generateInternCard = intern => {
+        return `
+        <div class="card employee-card">
+        <div class="card-header">
+            <h2 class="card-title">${intern.getName()}</h2>
+            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${intern.getId()}</li>
+                <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                <li class="list-group-item">Github: github.com/${intern.getSchool()}</li>
+            </ul>
+        </div>
+    </div>
+        `;
+    };
+
      const html = [];
      html.push(team
          .filter(employee => employee.getRole() === "Manager")
          .map(manager => generateManagerCard(manager))
      );
+
+     html.push(team
+         .filter(employee => employee.getRole() === "Engineer")
+         .map(engineer => generateEngineerCard(engineer))
+     );
+     
+     html.push(team
+         .filter(intern => intern.getRole() === "Intern")
+         .map(intern => generateInternCard(intern))
+     );
      /// add like above for engineer and intern
      return html.join("");
  }
-
-
-
-
-
 
 
 

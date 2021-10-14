@@ -8,7 +8,8 @@ const path = require("path")
 
 const dist = path.resolve(__dirname, "dist")
 const distFile = path.join(dist, "team.html")
-// require page template renderer here
+
+const renderTeam = require("./src/teamTemplates.js")
 
 teamArray = []
 
@@ -144,6 +145,7 @@ runApp = () =>  {
 
     // Create team cards starts here
     createTeamCards = () => {
+        console.log(teamArray)
         fs.writeFileSync(distFile, renderTeam(teamArray), "utf-8", err => {
             console.log(err)
         }) 
