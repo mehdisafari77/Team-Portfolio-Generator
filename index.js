@@ -42,7 +42,38 @@ runApp = () =>  {
         createTeam()
 
     })
-    }
+}
+
+    internPrompt = () => {
+        inquirer.prompt([
+            {   
+                type: "input",
+                name: "internName",
+                message: "What is your name?"
+            },
+            {   
+                type: "input",
+                name: "internId",
+                message: "What is your ID?"
+            },
+            {   
+                type: "input",
+                name: "internEmail",
+                message: "What is your email?"
+            },
+            {   
+                type: "input",
+                name: "internSchool",
+                message: "What is your school name?"
+            }
+        ])
+    .then(response => {
+        const internInstance = new Manager(response.internName, response.internId, response.internEmail, response.internSchool)
+        teamArray.push(internInstance)
+        createTeam()
+
+    })
+}
     createTeam = () => {
         inquirer.prompt([
             {
@@ -58,7 +89,7 @@ runApp = () =>  {
                 break;
 
                 case "Intern": 
-                // callIntern function here
+                internPrompt()
                 break;
 
                 case "Manager": 
