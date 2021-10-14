@@ -13,6 +13,8 @@ const distFile = path.join(dist, "team.html")
 teamArray = []
 
 runApp = () =>  {
+    
+    // Manager prompt starts here
     managerPrompt = () => {
         inquirer.prompt([
             {   
@@ -44,6 +46,7 @@ runApp = () =>  {
     })
 }
 
+    // Intern prompt starts here
     internPrompt = () => {
         inquirer.prompt([
             {   
@@ -68,12 +71,46 @@ runApp = () =>  {
             }
         ])
     .then(response => {
-        const internInstance = new Manager(response.internName, response.internId, response.internEmail, response.internSchool)
+        const internInstance = new Intern(response.internName, response.internId, response.internEmail, response.internSchool)
         teamArray.push(internInstance)
         createTeam()
 
     })
 }
+
+    // Engineer prompt starts here
+    engineerPrompt = () => {
+        inquirer.prompt([
+            {   
+                type: "input",
+                name: "engineerName",
+                message: "What is your name?"
+            },
+            {   
+                type: "input",
+                name: "engineerId",
+                message: "What is your ID?"
+            },
+            {   
+                type: "input",
+                name: "engineerEmail",
+                message: "What is your email?"
+            },
+            {   
+                type: "input",
+                name: "engineerGithub",
+                message: "What is your Github username?"
+            }
+        ])
+    .then(response => {
+        const engineerInstance = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGithub)
+        teamArray.push(engineerInstance)
+        createTeam()
+
+    })
+}
+
+    // Create team starts here
     createTeam = () => {
         inquirer.prompt([
             {
@@ -85,7 +122,7 @@ runApp = () =>  {
         ]).then(response => {
             switch(response.createTeam) {
                 case "Engineer": 
-                // callEngineer function here
+                engineerPrompt()
                 break;
 
                 case "Intern": 
@@ -103,9 +140,11 @@ runApp = () =>  {
     }
 
 
+    // internPrompt()
+    // managerPrompt()
+    createTeam()
 
-    managerPrompt()
-
+    // Create team cards starts here
     createTeamCards = () => {
         fs.writeFileSync(distFile, renderTeam(teamArray), "utf-8", err => {
             console.log(err)
