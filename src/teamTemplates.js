@@ -3,7 +3,10 @@ const cardGenerator = team => {
      const generateManagerCard = manager => {
          return `
          <div class="card employee-card">
-         <div class="card-header">
+         <div class="card-header" style="
+        background-color: #97F090; 
+        color: #fff;
+        ">
              <h2 class="card-title">${manager.getName()}</h2>
              <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
          </div>
@@ -23,7 +26,10 @@ const cardGenerator = team => {
      const generateEngineerCard = engineer => {
         return `
         <div class="card employee-card">
-        <div class="card-header">
+        <div class="card-header" style="
+        background-color: #97F090; 
+        color: #fff;
+        ">
             <h2 class="card-title">${engineer.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
         </div>
@@ -41,7 +47,10 @@ const cardGenerator = team => {
      const generateInternCard = intern => {
         return `
         <div class="card employee-card">
-        <div class="card-header">
+        <div class="card-header" style="
+        background-color: #97F090; 
+        color: #fff;
+        ">
             <h2 class="card-title">${intern.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
         </div>
@@ -98,8 +107,10 @@ const cardGenerator = team => {
              <div class="col-12 jumbotron mb-3 team-heading" style="
              padding-bottom: 20px;
              padding-top: 20px;
-         ">
-                 <h1 class="text-center">My Team</h1>
+             background-color: #97F090"
+             color: #fff;
+             ">
+                 <h1 class="text-center" style="color: #fff">My Team</h1>
              </div>
          </div>
      </div>
