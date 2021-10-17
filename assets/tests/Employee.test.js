@@ -24,8 +24,26 @@ test("Can set id", () => {
     expect(newEmployee.id).toBe(testId)
 })
 
-test("Can set id", () => {
+test("getName() gets name", () => {
+    const name = "mehdi"
+    const newEmployee = new Employee(name)
+    expect(newEmployee.getName()).toBe(name)
+})
+
+test("getId() gets id", () => {
     const testId = 1234
     const newEmployee = new Employee("mehdi", testId)
-    expect(newEmployee.id).toBe(testId)
+    expect(newEmployee.getId()).toBe(testId)
+})
+
+test("getEmail() gets email", () => {
+    const testEmail = "mehdi@gmail.com"
+    const newEmployee = new Employee("mehdi", 1, testEmail)
+    expect(newEmployee.getEmail()).toBe(testEmail)
+})
+
+test("getRole() return \"Employee\"", () => {
+    const testEmployee = "Employee"
+    const newEmployee = new Employee("mehdi", 1, "mehdi@gmail.com")
+    expect(newEmployee.getRole()).toBe(testEmployee)
 })
