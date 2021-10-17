@@ -1,4 +1,3 @@
-const { getMaxListeners } = require("process")
 const Engineer = require("../lib/Engineer")
 
 test("Can set Github account", () => {
@@ -13,7 +12,7 @@ test("getRole() return \"Engineer\"", () => {
     expect(newEngineer.getRole()).toBe(testEngineer)
 })
 
-test("getGithub() gets Github username ", () => {
+test("getGithub() gets Github username", () => {
     const testUser = "GithubUser"
     const newEngineer = new Engineer("mehdi", 1, "mehdi@gmail.com", testUser)
     expect(newEngineer.getGithub()).toBe(testUser)
