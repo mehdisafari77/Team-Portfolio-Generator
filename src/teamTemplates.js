@@ -31,7 +31,7 @@ const cardGenerator = team => {
             <ul class="list-group">
                 <li class="list-group-item">ID: ${engineer.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                <li class="list-group-item">Github: github.com/${engineer.getGithub()}</li>
+                <li class="list-group-item">Github: ${engineer.getGithub()}</li>
             </ul>
         </div>
     </div>
@@ -49,7 +49,7 @@ const cardGenerator = team => {
             <ul class="list-group">
                 <li class="list-group-item">ID: ${intern.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
-                <li class="list-group-item">Github: github.com/${intern.getSchool()}</li>
+                <li class="list-group-item">Scool: ${intern.getSchool()}</li>
             </ul>
         </div>
     </div>
@@ -95,7 +95,10 @@ const cardGenerator = team => {
  <body>
      <div class="container-fluid">
          <div class="row">
-             <div class="col-12 jumbotron mb-3 team-heading">
+             <div class="col-12 jumbotron mb-3 team-heading" style="
+             padding-bottom: 20px;
+             padding-top: 20px;
+         ">
                  <h1 class="text-center">My Team</h1>
              </div>
          </div>
