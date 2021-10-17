@@ -2,13 +2,25 @@ const cardGenerator = team => {
     //template literal with card to make manager using Manager model method
      const generateManagerCard = manager => {
          return `
-         <div class="card employee-card">
-         <div class="card-header" style="
+         <div class="card employee-card" style="
+         margin-right: 10px;
+         margin-left: 10px;
+        ">
+        <div class="card-header" style="
         background-color: #97F090; 
         color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
         ">
              <h2 class="card-title">${manager.getName()}</h2>
-             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
+             <h3 class="card-title" style="
+             margin-left: 10px;
+             margin-right: 10px;
+            ">
+         <i class="fas fa-briefcase mr-2"></i>${manager.getRole()}</h3>
          </div>
          <div class="card-body">
              <ul class="list-group">
@@ -25,19 +37,31 @@ const cardGenerator = team => {
      // html for engineer card
      const generateEngineerCard = engineer => {
         return `
-        <div class="card employee-card">
+        <div class="card employee-card" style="
+        margin-right: 10px;
+        margin-left: 10px;
+        ">
         <div class="card-header" style="
         background-color: #97F090; 
         color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
         ">
             <h2 class="card-title">${engineer.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
+            <h3 class="card-title" style="
+            margin-left: 10px;
+            margin-right: 10px;
+            ">
+        <i class="fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${engineer.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                <li class="list-group-item">Github: ${engineer.getGithub()}</li>
+                <li class="list-group-item">Github: <a href="https://github.com/">${engineer.getGithub()}</li>
             </ul>
         </div>
     </div>
@@ -46,19 +70,31 @@ const cardGenerator = team => {
      //html for intern card
      const generateInternCard = intern => {
         return `
-        <div class="card employee-card">
+        <div class="card employee-card" style="
+        margin-right: 10px;
+        margin-left: 10px;
+        ">
         <div class="card-header" style="
         background-color: #97F090; 
         color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
         ">
             <h2 class="card-title">${intern.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
+            <h3 class="card-title" style="
+            margin-left: 10px;
+            margin-right: 10px;
+            ">
+        <i class="fas fa-glasses mr-2"></i>${intern.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${intern.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
-                <li class="list-group-item">Scool: ${intern.getSchool()}</li>
+                <li class="list-group-item">School: ${intern.getSchool()}</li>
             </ul>
         </div>
     </div>
@@ -99,10 +135,14 @@ const cardGenerator = team => {
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <link rel="stylesheet" href="./assets/css/style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&display=swap" rel="stylesheet">
      <script src="https://kit.fontawesome.com/c502137733.js"></script>
  </head>
  <body>
-     <div class="container-fluid">
+     <div class="container-fluid" style="
+     font-family: 'Crimson Pro', serif;">
          <div class="row">
              <div class="col-12 jumbotron mb-3 team-heading" style="
              padding-bottom: 20px;
@@ -116,7 +156,9 @@ const cardGenerator = team => {
      </div>
      <div class="container">
          <div class="row">
-             <div class="team-area col-12 d-flex justify-content-center">
+             <div class="team-area col-12 d-flex justify-content-center"  style="
+             font-family: 'Crimson Pro', serif;
+             ">
                  ${cardGenerator(team)}
              </div>
          </div>
