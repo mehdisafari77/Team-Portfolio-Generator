@@ -5,6 +5,7 @@ const cardGenerator = team => {
          <div class="card employee-card" style="
          margin-right: 10px;
          margin-left: 10px;
+         margin-bottom: 10px;
         ">
         <div class="card-header" style="
         background: linear-gradient(315deg, #020501 15%, #f57b35 84%);
@@ -40,6 +41,7 @@ const cardGenerator = team => {
         <div class="card employee-card" style="
         margin-right: 10px;
         margin-left: 10px;
+        margin-bottom: 10px;
         ">
         <div class="card-header" style="
         background: linear-gradient(315deg, #020501 15%, #f57b35 84%);
@@ -73,6 +75,7 @@ const cardGenerator = team => {
         <div class="card employee-card" style="
         margin-right: 10px;
         margin-left: 10px;
+        margin-bottom: 10px;
         ">
         <div class="card-header" style="
         background: linear-gradient(315deg, #020501 15%, #f57b35 84%);

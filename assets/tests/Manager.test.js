@@ -1,9 +1,9 @@
-const Employee = require("../lib/Employee");
+// const Employee = require("../lib/Employee");
 const Manager = require("../lib/Manager")
 
 test("Can set office number", () => {
     const testOfficeNumber = 123
-    const newManager = new Manager("mehdi", 1, "mehdi@gmail.com", testOfficeNumber)
+    const newManager = new Manager(testOfficeNumber, 1, "mehdi@gmail.com", "mehdi" )
     expect(newManager.officeNumber).toBe(testOfficeNumber)
 })
 
@@ -15,6 +15,6 @@ test("getRole() return \"Manager\"", () => {
 
 test("getOfficeNumber() gets office number", () => {
     const testOfficeNumber = 123
-    const newManager = new Manager("mehdi", 1, "mehdi@gmail.com", testOfficeNumber)
+    const newManager = new Manager(testOfficeNumber, 1, "mehdi@gmail.com", "mehdi")
     expect(newManager.getOfficeNumber()).toBe(testOfficeNumber)
 })
