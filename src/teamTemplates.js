@@ -7,7 +7,7 @@ const cardGenerator = team => {
          margin-left: 10px;
         ">
         <div class="card-header" style="
-        background-color: #97F090; 
+        background: linear-gradient(315deg, #020501 15%, #f57b35 84%);
         color: #fff;
         display: flex;
         flex-direction: column;
@@ -16,17 +16,17 @@ const cardGenerator = team => {
         align-items: center;
         ">
              <h2 class="card-title">${manager.getName()}</h2>
-             <h3 class="card-title" style="
+             <h5 class="card-title" style="
              margin-left: 10px;
              margin-right: 10px;
             ">
-         <i class="fas fa-briefcase mr-2"></i>${manager.getRole()}</h3>
+         <i class="fas fa-briefcase mr-2"></i>${manager.getRole()}</h5>
          </div>
          <div class="card-body">
              <ul class="list-group">
-                 <li class="list-group-item">ID: ${manager.getId()}</li>
-                 <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-                 <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
+                 <li class="list-group-item"><i class="fas fa-fingerprint mr-1"></i>ID: ${manager.getId()}</li>
+                 <li class="list-group-item"><i class="fas fa-envelope mr-1"></i>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+                 <li class="list-group-item"><i class="fas fa-building mr-1"></i>Office number: ${manager.getOfficeNumber()}</li>
              </ul>
          </div>
      </div>
@@ -42,7 +42,7 @@ const cardGenerator = team => {
         margin-left: 10px;
         ">
         <div class="card-header" style="
-        background-color: #97F090; 
+        background: linear-gradient(315deg, #020501 15%, #f57b35 84%);
         color: #fff;
         display: flex;
         flex-direction: column;
@@ -51,17 +51,17 @@ const cardGenerator = team => {
         align-items: center;
         ">
             <h2 class="card-title">${engineer.getName()}</h2>
-            <h3 class="card-title" style="
+            <h5 class="card-title" style="
             margin-left: 10px;
             margin-right: 10px;
             ">
-        <i class="fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
+            <i class="fas fa-cogs mr-2"></i>${engineer.getRole()}</h5>
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item">ID: ${engineer.getId()}</li>
-                <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                <li class="list-group-item">Github: <a href="https://github.com/">${engineer.getGithub()}</li>
+                <li class="list-group-item"><i class="fas fa-fingerprint mr-1"></i>ID: ${engineer.getId()}</li>
+                <li class="list-group-item"><i class="fas fa-envelope mr-1"></i>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                <li class="list-group-item"><i class="fab fa-github mr-1"></i>Github: <a href="https://github.com/" target="_blank">${engineer.getGithub()}</a></li>
             </ul>
         </div>
     </div>
@@ -75,7 +75,7 @@ const cardGenerator = team => {
         margin-left: 10px;
         ">
         <div class="card-header" style="
-        background-color: #97F090; 
+        background: linear-gradient(315deg, #020501 15%, #f57b35 84%);
         color: #fff;
         display: flex;
         flex-direction: column;
@@ -84,17 +84,17 @@ const cardGenerator = team => {
         align-items: center;
         ">
             <h2 class="card-title">${intern.getName()}</h2>
-            <h3 class="card-title" style="
+            <h5 class="card-title" style="
             margin-left: 10px;
             margin-right: 10px;
             ">
-        <i class="fas fa-glasses mr-2"></i>${intern.getRole()}</h3>
+            <i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h5>
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item">ID: ${intern.getId()}</li>
-                <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
-                <li class="list-group-item">School: ${intern.getSchool()}</li>
+                <li class="list-group-item"><i class="fas fa-fingerprint mr-1"></i>ID: ${intern.getId()}</li>
+                <li class="list-group-item"><i class="fas fa-envelope mr-1"></i>Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                <li class="list-group-item"><i class="fas fa-graduation-cap mr-1"></i>School: ${intern.getSchool()}</li>
             </ul>
         </div>
     </div>
@@ -116,7 +116,7 @@ const cardGenerator = team => {
          .filter(intern => intern.getRole() === "Intern")
          .map(intern => generateInternCard(intern))
      );
-     /// add like above for engineer and intern
+     
      return html.join("");
  }
 
@@ -131,7 +131,7 @@ const cardGenerator = team => {
      <meta charset="UTF-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-     <title>My Team</title>
+     <title>The Office</title>
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <link rel="stylesheet" href="./assets/css/style.css">
@@ -140,24 +140,30 @@ const cardGenerator = team => {
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&display=swap" rel="stylesheet">
      <script src="https://kit.fontawesome.com/c502137733.js"></script>
  </head>
- <body>
+ <body style="background: linear-gradient(315deg, #fddbaf  15%, #f5ba8a 84%);">
      <div class="container-fluid" style="
      font-family: 'Crimson Pro', serif;">
          <div class="row">
              <div class="col-12 jumbotron mb-3 team-heading" style="
              padding-bottom: 20px;
              padding-top: 20px;
-             background-color: #97F090"
+             background: linear-gradient(315deg, #020501 15%, #f57b35 84%);
              color: #fff;
              ">
-                 <h1 class="text-center" style="color: #fff">My Team</h1>
+                 <h1 class="text-center" style="color: #fff">Dunder Mifflin Paper Company</h1>
              </div>
          </div>
      </div>
-     <div class="container">
+     <div class="container-fluid">
          <div class="row">
-             <div class="team-area col-12 d-flex justify-content-center"  style="
+             <div class="team-area col-12" style="
              font-family: 'Crimson Pro', serif;
+             display: flex;
+             flex-direction: row;
+             flex-wrap: wrap;
+             align-content: center;
+             justify-content: center;
+             align-items: center;
              ">
                  ${cardGenerator(team)}
              </div>
@@ -165,5 +171,5 @@ const cardGenerator = team => {
      </div>
  </body>
  </html>
-     `;
+    `;
  };

@@ -1,7 +1,7 @@
 const inquirer = require("inquirer")
-const Manager = require("./lib/Manager")
-const Engineer = require("./lib/Engineer")
-const Intern = require("./lib/Intern")
+const Manager = require("./assets/lib/Manager")
+const Engineer = require("./assets/lib/Engineer")
+const Intern = require("./assets/lib/Intern")
 const fs = require("fs")
 const path = require("path")
 
@@ -21,26 +21,26 @@ runApp = () =>  {
             {   
                 type: "input",
                 name: "managerName",
-                message: "What is your name?"
+                message: "What is your manager's name?"
             },
             {   
                 type: "input",
                 name: "managerId",
-                message: "What is your ID?"
+                message: "What is your manager's ID?"
             },
             {   
                 type: "input",
                 name: "managerEmail",
-                message: "What is your email?"
+                message: "What is your manager's email?"
             },
             {   
                 type: "input",
                 name: "officeNum",
-                message: "What is your office number?"
+                message: "What is your manager's office number?"
             }
         ])
     .then(response => {
-        const managerInstance = new Manager(response.managerName, response.managerId, response.managerEmail, response.officeNum)
+        const managerInstance = new Manager(response.managerId, response.managerId, response.managerEmail, response.managerName)
         teamArray.push(managerInstance)
         createTeam()
 
@@ -53,26 +53,26 @@ runApp = () =>  {
             {   
                 type: "input",
                 name: "internName",
-                message: "What is your name?"
+                message: "What is your intern's name?"
             },
             {   
                 type: "input",
                 name: "internId",
-                message: "What is your ID?"
+                message: "What is your intern's ID?"
             },
             {   
                 type: "input",
                 name: "internEmail",
-                message: "What is your email?"
+                message: "What is your intern's email?"
             },
             {   
                 type: "input",
                 name: "internSchool",
-                message: "What is your school name?"
+                message: "What is your intern's school name?"
             }
         ])
     .then(response => {
-        const internInstance = new Intern(response.internName, response.internId, response.internEmail, response.internSchool)
+        const internInstance = new Intern(response.internSchool, response.internId, response.internEmail, response.internName)
         teamArray.push(internInstance)
         createTeam()
 
@@ -85,26 +85,26 @@ runApp = () =>  {
             {   
                 type: "input",
                 name: "engineerName",
-                message: "What is your name?"
+                message: "What is your engineer's name?"
             },
             {   
                 type: "input",
                 name: "engineerId",
-                message: "What is your ID?"
+                message: "What is your engineer's ID?"
             },
             {   
                 type: "input",
                 name: "engineerEmail",
-                message: "What is your email?"
+                message: "What is your engineer's email?"
             },
             {   
                 type: "input",
                 name: "engineerGithub",
-                message: "What is your Github username?"
+                message: "What is your engineer's Github username?"
             }
         ])
     .then(response => {
-        const engineerInstance = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGithub)
+        const engineerInstance = new Engineer(response.engineerGithub, response.engineerId, response.engineerEmail, response.engineerName)
         teamArray.push(engineerInstance)
         createTeam()
 

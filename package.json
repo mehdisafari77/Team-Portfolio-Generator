@@ -1,25 +1,20 @@
 {
-  "name": "jest",
+  "name": "team-portfolio-generator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mehdisafari77/Team-Portfolio-Generator.git"
+    "start": "node index",
+    "watch": "nodemon index",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mehdisafari77/Team-Portfolio-Generator/issues"
-  },
-  "homepage": "https://github.com/mehdisafari77/Team-Portfolio-Generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.0"
+    "chalk": "^2.4.2",
+    "inquirer": "^6.5.2"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
   }
 }

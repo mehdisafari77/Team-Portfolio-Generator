@@ -15,6 +15,6 @@ test("getRole() return \"Manager\"", () => {
 
 test("getOfficeNumber() gets office number", () => {
     const testOfficeNumber = 123
-    const newManager = new Engineer("mehdi", 1, "mehdi@gmail.com", testOfficeNumber)
+    const newManager = new Manager("mehdi", 1, "mehdi@gmail.com", testOfficeNumber)
     expect(newManager.getOfficeNumber()).toBe(testOfficeNumber)
 })

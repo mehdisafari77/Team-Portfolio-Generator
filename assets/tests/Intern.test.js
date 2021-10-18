@@ -8,7 +8,7 @@ test("Can set school name", () => {
 
 test("getRole() return \"Intern\"", () => {
     const testIntern = "Intern"
-    const newIntern = new Manager("mehdi", 1, "mehdi@gmail.com", "UCSF")
+    const newIntern = new Intern("mehdi", 1, "mehdi@gmail.com", "UCSF")
     expect(newIntern.getRole()).toBe(testIntern)
 })
 
