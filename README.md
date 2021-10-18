@@ -14,6 +14,9 @@ this is a project that creates a Team Profile after prompting multiple questions
 ## Screenshot Of Questions + Answers In Terminal
 <img width="626" alt="Screenshot 2021-10-17 at 19 02 21" src="https://user-images.githubusercontent.com/75599021/137659410-8c135452-699b-4f10-90ec-2f452ea1bb4d.png">
 
+## Video Of Html Activation From Terminal
+https://user-images.githubusercontent.com/75599021/137661010-1ecc567b-1220-4b83-bb62-c8186dc0d859.mov
+
 ## Screenshot Of Tests
 <img width="513" alt="Screenshot 2021-10-17 at 19 13 55" src="https://user-images.githubusercontent.com/75599021/137659325-53f234a4-0f6f-405f-9028-f55fa9216b7b.png">
 
