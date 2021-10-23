@@ -8,6 +8,9 @@ this is a project that creates a Team Profile after prompting multiple questions
 4. Start the Team generation by running "node index.js" within your Terminal.
 6. After all questions are answered, a file under the name "team.html" will be generated for you with the information that was given to Terminal as answers to the prompts.
 
+## Youtube Link Demostrating One Example Of Website Generation
+https://youtu.be/4ml18p4kNM0
+
 ## Screenshot Of Generated Website
 <img width="912" alt="Screenshot 2021-10-17 at 19 01 55" src="https://user-images.githubusercontent.com/75599021/137659288-f59be078-be08-4280-bb20-1906474929bf.png">
 
